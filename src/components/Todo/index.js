@@ -101,13 +101,13 @@ export default class App extends Component {
     return (
       <div className='todoapp'>
         <Header
+        checkAll={this.checkAll}
           addTodo={this.addTodos}
+          isCheckedAll={isCheckedAll}
         />
         <TodoWrapper
           listTodos={this.filterByStatus(listTodos, status)}
           markCompleted={this.markCompleted}
-          checkAll={this.checkAll}
-          isCheckedAll={isCheckedAll}
           todoEditingId={todoEditingId}
           getEditTodo={this.getEditTodo}
           editTodo={this.editTodo}

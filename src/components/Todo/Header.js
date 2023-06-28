@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 import { message } from 'antd';
 
 const Header = (props) => {
-    const {addTodo} = props
+    const {addTodo, checkAll, isCheckedAll} = props
     const [text, setText] = useState('')
 
     const onAddTodo = (event) => {
@@ -31,13 +31,25 @@ const Header = (props) => {
     return (
         <header className="header">
             <h1>todos</h1>
+            <div className="header-wrap-content-left">
+                <input
+                    className="toggle-all"
+                    type="checkbox"
+                    onChange={() => {
+                        checkAll()
+                    }}
+                    checked={isCheckedAll}
+                />
+                <label htmlFor="toggle-all" onClick={checkAll} />
+            </div>
             <input
-                className="new-todo"
-                placeholder="What needs to be done?"
-                value={text}
-                onChange={onChangeInput}
-                onKeyPress={onAddTodo}
+            className="new-todo"
+            placeholder="What needs to be done?"
+            value={text}
+            onChange={onChangeInput}
+            onKeyPress={onAddTodo}
             />
+            
         </header>
     )    
 }

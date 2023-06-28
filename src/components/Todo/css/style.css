@@ -39,6 +39,13 @@ body {
 }
 
 input[type="checkbox" i] {
+    /* background-color: initial;
+    cursor: default;
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial; */
     background-color: initial;
     cursor: default;
     -webkit-appearance: checkbox;
@@ -46,6 +53,12 @@ input[type="checkbox" i] {
     margin: 3px 3px 3px 4px;
     padding: initial;
     border: initial;
+    position: absolute;
+    top: 26px;
+    left: 9px;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .todo-list li label {
@@ -150,6 +163,11 @@ button {
     text-rendering: optimizeLegibility;
 }
 
+.header-wrap-content-left {
+    position: absolute;
+    z-index: 10;
+    left: 10px;
+}
 .toggle-all, .todo-list li .toggle {
     background: none;
 }
@@ -157,7 +175,7 @@ button {
 .toggle-all {
     text-align: center;
     border: none;
-    opacity: 0;
+    /* opacity: 0; */
     position: absolute;
 }
 
@@ -166,7 +184,7 @@ button {
     height: 34px;
     font-size: 0;
     position: absolute;
-    top: -52px;
+    top: 12px;
     left: -13px;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -187,6 +205,11 @@ button {
     position: relative;
     z-index: 2;
     border-top: 1px solid #e6e6e6;
+    /* min-height: 50px; */
+    max-height: 300px;
+    /* height: 300px; */
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .footer {
